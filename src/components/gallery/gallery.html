@@ -1,0 +1,15 @@
+{% macro gallery(images) %}
+{% from '../icon/icon.html' import icon %}
+<div class="gallery" data-gallery>
+  {% set remainderAmount = images.length % 3 %}
+  {% if remainderAmount == 0 %}
+    {% set remainderAmount = 3 %}
+  {% endif %}
+  {%- for image in images -%}
+    <a href="{{ image.src }}" class="gallery__item {% if remainderAmount > loop.revindex0 %} gallery__bottom-row {% endif %}" data-caption="{{ image.caption }}">
+        <img src="{{ image.src }}" alt="{{ image.alt }}">
+        <span class="gallery__caption">{{ icon('triangle-up') }} {{ image.caption }}</span>
+    </a>
+  {%- endfor -%}
+</div>
+{% endmacro %}

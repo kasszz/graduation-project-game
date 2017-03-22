@@ -1,0 +1,38 @@
+@import '../../components/variables/variables.css';
+@import '../../components/normalize/normalize.css';
+@import '../../components/typography/typography.css';
+@import '../../components/gallery/gallery.css';
+
+* {
+  box-sizing: border-box;
+}
+
+.asd {
+  position: relative;
+}
+
+.wrapper {
+  width: calc(var(--grid-main-width) + var(--grid-aside-width));
+  margin: 0 auto;
+}
+
+.grid-main {
+  display: inline-block;
+  width: var(--grid-main-width);
+}
+
+.grid-aside {
+  display: inline-block;
+  width: var(--grid-aside-width);
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  overflow: hidden;
+}

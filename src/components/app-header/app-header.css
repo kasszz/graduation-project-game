@@ -1,0 +1,20 @@
+.app-header {
+  background-color: var(--color-primary);
+  padding-top: var(--header-padding);
+  padding-bottom: var(--header-padding);
+}
+
+.app-header h1 {
+  margin: 0;
+  margin-bottom: var(--gutter-default);
+}
+
+.app-header ul {
+  padding-left: 0;
+  margin: 0;
+}
+
+.app-header ul li {
+  list-style: none;
+  line-height: calc(var(--line-height) * 0.75);
+}

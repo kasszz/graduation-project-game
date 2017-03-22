@@ -1,0 +1,18 @@
+{% extends "views/_base/_base.html" %}
+
+{% set head_title = "Afstudeerproject documentatie Casper Boutens" %}
+{% set head_description = "" %}
+
+{% block page_content %}
+  {% include 'components/app-header/app-header.html' %}
+  <div class="wrapper">
+    {% include 'components/navigation/navigation.html' %}
+    <div data-main>
+      {% include 'components/test/test.html' %}
+    </div>
+  </div>
+{% endblock %}
+
+{% block page_scripts %}
+	<script src="/assets/js/script.js"></script>
+{% endblock %}

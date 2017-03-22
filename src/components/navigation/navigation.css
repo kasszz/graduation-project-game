@@ -1,0 +1,43 @@
+nav {
+  position: absolute;
+  width: var(--grid-aside-width);
+  transition: var(--transition-speed);
+  padding-top: 0;
+}
+
+nav.sticky {
+  position: fixed;
+  padding-top: calc(var(--gutter-large) * 2);
+}
+
+nav > ol {
+  padding-left: 0;
+  margin: 0;
+}
+
+nav > ol ol {
+  padding-left: 0;
+}
+
+nav > ol > li {
+  margin-bottom: var(--gutter-default);
+}
+
+nav > ol > li:last-of-type {
+  margin-bottom: 0;
+}
+
+nav li {
+  list-style: none;
+  display: block;
+}
+
+nav > ol > li > a {
+  font-weight: bold;
+}
+
+nav a {
+  font-family: 'Raleway', sans-serif;
+  text-decoration: none;
+  font-size: var(--font-small);
+}

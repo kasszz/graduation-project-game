@@ -1,0 +1,7 @@
+{% macro video(src, caption, autoplay) %}
+{% from '../icon/icon.html' import icon %}
+<div class="video">
+  <video src="{{ src }}" autoplay="{{ autoplay }}" loop="true" muted="true"></video>
+  <span class="video__caption">{{ icon('triangle-up') }} {{ caption }}</span>
+</div>
+{% endmacro %}

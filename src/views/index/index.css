@@ -1,0 +1,16 @@
+@import '../../components/app-header/app-header.css';
+@import '../../components/navigation/navigation.css';
+@import '../../components/icon/icon.css';
+@import '../../components/accordion/accordion.css';
+@import '../../components/gallery/gallery.css';
+@import '../../components/video/video.css';
+
+[data-main] {
+  padding-left: var(--gutter-large);
+  margin-left: var(--grid-aside-width);
+  border-left: 2px solid var(--color-primary);
+}
+
+nav {
+  padding-right: var(--gutter-large);
+}
