@@ -4,6 +4,7 @@
 @import '../../components/accordion/accordion.css';
 @import '../../components/gallery/gallery.css';
 @import '../../components/video/video.css';
+@import '../../components/word-explainer/word-explainer.css';
 
 [data-main] {
   padding-left: var(--gutter-large);

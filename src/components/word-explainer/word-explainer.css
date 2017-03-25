@@ -1,0 +1,43 @@
+.difficult-word {
+  position: relative;
+  margin-right: 1em;
+}
+
+.difficult-word__explained-wrapper {
+  position: absolute;
+  top: -0.5em;
+  right: -0.75em;
+}
+
+.difficult-word__explained-wrapper .icon {
+  font-size: var(--font-small);
+  line-height: 1;
+}
+
+.difficult-word__explained-modal {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: calc( var(--gutter-default) / 2);
+  background: white;
+  border: 1px solid var(--color-font);
+  font-size: var(--font-small);
+  line-height: var(--line-height-small);
+  width: var(--grid-pop-up);
+}
+
+.difficult-word__explained-wrapper:hover .difficult-word__explained-modal {
+  display: block;
+}
+
+.difficult-word__explained-title {
+  display: block;
+  margin-bottom: var(--gutter-default);
+  font-weight: bold;
+}
+
+.difficult-word__explained-modal a {
+  display: inline-block;
+  margin-top: var(--gutter-default);
+}

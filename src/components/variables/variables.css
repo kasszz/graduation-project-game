@@ -19,11 +19,13 @@
 
   /* textspacing */
   --line-height: 1.6em;
+  --line-height-small: 1.2em;
   --letter-spacing: .5px;
 
   /* grid */
   --grid-main-width: 40rem;
   --grid-aside-width: 20rem;
+  --grid-pop-up: 20rem;
 
   /* gutters */
   --gutter-default: 16px;
