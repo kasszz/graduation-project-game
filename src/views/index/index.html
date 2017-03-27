@@ -1,5 +1,11 @@
 {% extends "views/_base/_base.html" %}
 
+{% from "components/accordion/accordion.html" import accordion %}
+{% from "components/gallery/gallery.html" import gallery %}
+{% from "components/video/video.html" import video %}
+{% from "components/trello/trello.html" import trello %}
+{% from "components/word-explainer/word-explainer.html" import wordExplainer %}
+
 {% set head_title = "Afstudeerproject documentatie Casper Boutens" %}
 {% set head_description = "" %}
 
@@ -8,7 +14,11 @@
   <div class="wrapper">
     {% include 'components/navigation/navigation.html' %}
     <div data-main>
-      {% include 'components/test/test.html' %}
+      {% include 'chapters/proem.html' %}
+      {% include 'chapters/Management-summary.html' %}
+      {% include 'chapters/introduction.html' %}
+      {% include 'chapters/issue-definition.html' %}
+      {% include 'chapters/conclusion.html' %}
     </div>
   </div>
 {% endblock %}
