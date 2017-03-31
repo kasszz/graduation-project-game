@@ -1,3 +1,5 @@
+@import '../../../node_modules/highlight.js/styles/github.css';
+@import '../../components/variables/variables.css';
 @import '../../components/app-header/app-header.css';
 @import '../../components/navigation/navigation.css';
 @import '../../components/icon/icon.css';
@@ -14,4 +16,10 @@
 
 nav {
   padding-right: var(--gutter-large);
+}
+
+pre {
+  background-color: var(--color-accordion-background);
+  padding-top: var(--gutter-default);
+  padding-bottom: var(--gutter-default);
 }

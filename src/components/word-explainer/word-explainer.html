@@ -2,15 +2,12 @@
 {% from '../icon/icon.html' import icon %}
 <span class="difficult-word">
   {{ word }}
-  <span class="difficult-word__explained-wrapper">
-    {{ icon('information') }}
-    <span class="difficult-word__explained-modal">
-      <span class="difficult-word__explained-title">{{ word }}</span>
-      {{ explainText | safe }}
-      {% if source %}
-        <a href="{{ bron }}">Bronvermelding</a>
-      {% endif %}
-    </span>
+  <span class="difficult-word__explained-modal">
+    <span class="difficult-word__explained-title">{{ word }}</span>
+    <p>{{ explainText }}</p>
+    {% if source %}
+      <a href="http://{{ source }}" target="_blank">Bronvermelding</a>
+    {% endif %}
   </span>
 </span>
 {% endmacro %}

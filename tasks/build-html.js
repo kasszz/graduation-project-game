@@ -3,10 +3,10 @@
 const glob = require('glob-promise');
 const nunjucks = require('nunjucks');
 const markdown = require('nunjucks-markdown');
-const marked = require('marked');
 const path = require('path');
 
 const fp = require('../lib/fileProcessors.js');
+const markdownRenderer = require('../lib/markdown-renderer.js');
 
 const basePath = './src/';
 const input = './src/views/**/**.html';
@@ -15,7 +15,7 @@ const output = './dist/';
 
 const env = nunjucks.configure(basePath);
 
-markdown.register(env, marked);
+markdown.register(env, markdownRenderer(nunjucks));
 
 glob(input, {'ignore': inputExclude})
 	.then(filePaths => {
