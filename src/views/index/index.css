@@ -20,6 +20,9 @@ nav {
 
 pre {
   background-color: var(--color-accordion-background);
-  padding-top: var(--gutter-default);
-  padding-bottom: var(--gutter-default);
+  padding: var(--gutter-default);
+}
+
+.accordion__panel-content pre {
+  padding: 0;
 }

@@ -1,6 +1,5 @@
 .difficult-word {
   position: relative;
-  margin-right: 1em;
   font-style: italic;
 }
 
@@ -26,8 +25,8 @@
   font-weight: bold;
 }
 
-.difficult-word__explained-modal p:last-of-type {
-  margin-bottom: 0;
+.difficult-word__explained-text {
+  display: block;
 }
 
 .difficult-word__explained-modal a {

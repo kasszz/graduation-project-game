@@ -1,10 +1,10 @@
 {% macro wordExplainer(word, explainText, source) %}
 {% from '../icon/icon.html' import icon %}
-<span class="difficult-word">
+<span class="difficult-word" cheerio-span>
   {{ word }}
   <span class="difficult-word__explained-modal">
     <span class="difficult-word__explained-title">{{ word }}</span>
-    <p>{{ explainText }}</p>
+    <span class="difficult-word__explained-text">{{ explainText }}</span>
     {% if source %}
       <a href="http://{{ source }}" target="_blank">Bronvermelding</a>
     {% endif %}

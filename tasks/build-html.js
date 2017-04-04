@@ -7,6 +7,7 @@ const path = require('path');
 
 const fp = require('../lib/fileProcessors.js');
 const markdownRenderer = require('../lib/markdown-renderer.js');
+const cheerioParser = require('../lib/cheerio-parser.js');
 
 const basePath = './src/';
 const input = './src/views/**/**.html';
@@ -31,6 +32,7 @@ function createHtmlFile(nunjucksFilePath) {
 	const outputFilePath = path.join(output, path.basename(nunjucksFilePath))
 
 	renderHTML(nunjucksFilePath)
+    .then(cheerioParser)
 		.then(html => fp.create(outputFilePath, html))
 		.catch(err => console.error(err));
 }
