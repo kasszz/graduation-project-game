@@ -26,3 +26,40 @@ pre {
 .accordion__panel-content pre {
   padding: 0;
 }
+
+blockquote {
+  font-family: Georgia, serif;
+  font-size: var(--font-blockquote);
+  width: 100%;
+  margin: .25em 0;
+  padding: .25em calc( var(--gutter-default) * 2 );
+  line-height: var(--line-height);
+  position: relative;
+  color: var(--color-font);
+  border-top: 1px solid var(--color-cite);
+  border-bottom: 1px solid var(--color-cite);
+}
+
+blockquote:before {
+  display: block;
+  content: "\201C";
+  font-size: 2.5em;
+  position: absolute;
+  left: 0;
+  top: 18px;
+  color: var(--color-cite);
+}
+
+blockquote cite {
+  display: block;
+}
+
+blockquote a {
+  color: var(--color-cite);
+  font-size: var(--font-small);
+  text-decoration: none;
+}
+
+blockquote a:before {
+  content: "-- ";
+}

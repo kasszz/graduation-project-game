@@ -29,7 +29,7 @@ glob(input, {'ignore': inputExclude})
 	.catch(err => console.error(err));
 
 function createHtmlFile(nunjucksFilePath) {
-	const outputFilePath = path.join(output, path.basename(nunjucksFilePath))
+	const outputFilePath = path.join(output, path.basename(nunjucksFilePath));
 
 	renderHTML(nunjucksFilePath)
     .then(cheerioParser)

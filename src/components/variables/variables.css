@@ -7,12 +7,14 @@
   --font-heading-3: 1.5em;
   --font-heading-4: 1.25em;
   --font-heading-5: 1.125em;
+  --font-blockquote: 1.25em;
 
   /* colors */
   --color-primary: #EDDD3E;
   --color-font: #12353C;
   --color-hover: color(var(--color-font) lightness(38%) saturation(70%));
   --color-accordion-background: #faf7f5;
+  --color-cite: #999999;
 
   /* transition speed */
   --transition-speed: 0.4s;

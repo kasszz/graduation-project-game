@@ -14,24 +14,12 @@
   <div class="wrapper">
     {% include 'components/navigation/navigation.html' %}
     <div data-main>
-      <section>
-        {% markdown 'chapters/proem.md' %}
-      </section>
-      <section>
-        {% markdown 'chapters/Management-summary.md' %}
-      </section>
-      <section>
-        {% markdown 'chapters/introduction.md' %}
-      </section>
-      <section>
-        {% markdown 'chapters/issue-definition.md' %}
-      </section>
-      <section>
-        {% markdown 'chapters/conclusion.md' %}
-      </section>
-      <section>
-        {% markdown 'chapters/attachment.md' %}
-      </section>
+      {% markdown 'chapters/voorwoord.md' %}
+      {% markdown 'chapters/managementsamenvatting.md' %}
+      {% markdown 'chapters/inleiding.md' %}
+      {% markdown 'chapters/probleemstelling.md' %}
+      {% markdown 'chapters/conclusie.md' %}
+      {% markdown 'chapters/bijlage.md' %}
     </div>
   </div>
 {% endblock %}
