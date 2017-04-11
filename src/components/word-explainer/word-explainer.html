@@ -1,12 +1,13 @@
-{% macro wordExplainer(word, explainText, source) %}
+{% macro wordExplainer(word) %}
 {% from '../icon/icon.html' import icon %}
+{% set libaryItem = libary(word) %}
 <span class="difficult-word" cheerio-span>
   {{ word }}
   <span class="difficult-word__explained-modal">
-    <span class="difficult-word__explained-title">{{ word }}</span>
-    <span class="difficult-word__explained-text">{{ explainText }}</span>
-    {% if source %}
-      <a href="http://{{ source }}" target="_blank">Bronvermelding</a>
+    <span class="difficult-word__explained-title">{{ libaryItem.title }}</span>
+    <span class="difficult-word__explained-text">{{ libaryItem.explanation }}</span>
+    {% if libaryItem.source %}
+      <a href="{{ libaryItem.source }}" target="_blank">Bronvermelding</a>
     {% endif %}
   </span>
 </span>

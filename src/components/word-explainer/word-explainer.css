@@ -13,6 +13,8 @@
   border: 1px solid var(--color-font);
   line-height: var(--line-height-small);
   width: var(--grid-pop-up);
+  font-style: normal;
+  z-index: 100;
 }
 
 .difficult-word:hover .difficult-word__explained-modal {
