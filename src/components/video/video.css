@@ -1,3 +1,12 @@
+.twoVideos .video {
+  display: inline-block;
+  width: calc((536px / 2) - var(--gutter-default));
+}
+
+.twoVideos .video:first-of-type {
+  margin-right: var(--gutter-default);
+}
+
 .video video {
   width: 100%;
 }

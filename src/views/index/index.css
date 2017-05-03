@@ -18,6 +18,10 @@ nav {
   padding-right: var(--gutter-large);
 }
 
+li {
+  line-height: var(--line-height);
+}
+
 pre {
   background-color: var(--color-accordion-background);
   padding: var(--gutter-default);
@@ -40,7 +44,7 @@ blockquote {
   border-bottom: 1px solid var(--color-cite);
 }
 
-blockquote:before {
+blockquote.with-cite:before {
   display: block;
   content: "\201C";
   font-size: 2.5em;
@@ -52,6 +56,9 @@ blockquote:before {
 
 blockquote cite {
   display: block;
+  color: var(--color-cite);
+  font-size: var(--font-small);
+  text-decoration: none;
 }
 
 blockquote a {
@@ -60,6 +67,6 @@ blockquote a {
   text-decoration: none;
 }
 
-blockquote a:before {
+blockquote cite:before {
   content: "-- ";
 }

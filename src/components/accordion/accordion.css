@@ -1,3 +1,7 @@
+.accordion + .accordion {
+  margin-top: var(--gutter-default);
+}
+
 .accordion__header {
   display: block;
   width: 100%;
@@ -32,6 +36,7 @@
 .accordion__panel-content {
   padding: var(--gutter-default);
   background-color: var(--color-accordion-background);
+  line-height: var(--line-height);
 }
 
 .accordion__panel-content > *:first-child {

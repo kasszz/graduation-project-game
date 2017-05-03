@@ -29,6 +29,7 @@
 
 .difficult-word__explained-text {
   display: block;
+  line-height: var(--line-height);
 }
 
 .difficult-word__explained-modal a {

@@ -68,7 +68,7 @@ function createNavTree() {
 }
 
 function setChildrenSections(parentTree, round, idPrefix) {
-    const childSelector = formatSelector(`#${parentTree.element.id}`, round);
+    const childSelector = `#${parentTree.element.id} > ${opt.childSelector}`;
     const childSections = listElements(parentTree.element, childSelector);
     const indentAmount = String(idPrefix).split(opt.hashIndentChar).length;
 
@@ -97,15 +97,6 @@ function createSectionTree(element, id, title, index) {
     position: `${index}`,
     children: []
   }
-}
-
-function formatSelector(scopeSelector, nestedAmount) {
-  let selector = scopeSelector;
-  for(let i = 0; i < nestedAmount; i ++) {
-      selector += ` > ${opt.childSelector}`;
-  }
-
-  return selector;
 }
 
 function indexHeader(html, id) {
