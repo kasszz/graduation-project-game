@@ -7,6 +7,15 @@
   margin-right: var(--gutter-default);
 }
 
+.threeVideos .video {
+  display: inline-block;
+  width: calc((536px / 3) - var(--gutter-default));
+}
+
+.threeVideos .video:first-of-type {
+  margin-right: var(--gutter-default);
+}
+
 .video video {
   width: 100%;
 }

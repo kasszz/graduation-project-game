@@ -65,5 +65,18 @@ module.exports = {
     "title": "NodeJS",
     "explanation": "Node.js is een softwareplatform waarop men applicaties kan ontwikkelen en draaien. Die applicaties worden geschreven in JavaScript, maar in tegenstelling tot veel andere Javascript-toepassingen, worden die niet uitgevoerd in een webbrowser, maar in de JavaScript-Engine van Node.js zelf, die op de server draait.",
     "source": "https://nl.wikipedia.org/wiki/Node.js"
+  },
+  "Oauth2": {
+    "title": "Open Authorization",
+    "explanation": "OAuth (Open Authorization) is een open standaard voor autorisatie. Gebruikers kunnen hiermee een programma of website toegang geven tot hun privégegevens, die opgeslagen zijn op een andere website, zonder hun gebruikersnaam en wachtwoord uit handen te geven. OAuth maakt gebruik van tokens, waardoor vertrouwelijke gegevens als een gebruikersnaam of wachtwoord niet afgegeven hoeven te worden. Elk token geeft slechts toegang tot specifieke gegevens van één website voor een bepaalde duur. Zo kan ingesteld worden dat een bepaald programma slechts een jaar toegang heeft tot de gegevens. Hierna kan eventueel opnieuw toegang worden gevraagd.",
+    "source": "https://nl.wikipedia.org/wiki/OAuth"
+  },
+  "browser scope": {
+    "title": "Browser scope",
+    "explanation": "Een project heeft bepaalde technische eisen waaraan het moet voldoen. Voor de front-end wordt dat een browser scope genoemd. Hierin wordt bepaald welke browsers ondersteund worden en daardoor ook welke features ondersteund worden. Ook wordt er gezegd welke resoluties het project moet ondersteunen."
+  },
+  "Thierry van Trirum": {
+    "title": "Thierry van Trirum",
+    "explanation": "Een CMD student aan de HvA. Hij heeft als specialisatievak design gekozen en hij is zeer ambitieus. In mijn ogen levert hij vaak mooi werk op en daarom vraag ik vaak om zijn mening over mijn designs."
   }
 };

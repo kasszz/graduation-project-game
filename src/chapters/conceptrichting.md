@@ -1,5 +1,5 @@
 ## conceptrichting
-In dit hoofdstuk wordt er nader ingegaan op de verschillende conceptrichtingen.Ze worden gegenereerd en onderzocht om uit te vinden wat de beste richting is voor het probleem. Eerst moet er gekeken worden wat de wensen, randvoorwaarden zijn. Daarna worden er richtingen bedacht met verschillende inspiratie methodes. Deze richtingen worden getest om te kijken welke richting het best bij de bezoekers past. Met deze richting gaat het project verder.
+In dit hoofdstuk wordt er nader ingegaan op de verschillende conceptrichtingen. De richtingen worden onderzocht om het beste product voor De Voorhoede te maken.
 
 ### Conceptrichting generatie
 Om bij de beste richting te komen moet er eerst onderzoek worden gedaan naar de mogelijkheden. Zo moet eerst worden gekeken naar wat de stakeholders willen, daaruit worden onderandere randvoorwaarden gevormd. Daarna wordt er gekeken naar wat de stakeholders in gedachte hebben d.m.v. een
@@ -9,27 +9,27 @@ Om bij de beste richting te komen moet er eerst onderzoek worden gedaan naar de 
 als inspiratiebron voor dit project kan doen.
 
 #### De wensen
-De Voorhoede (en UNITiD) wil een concept dat leuk en inhoudelijk is. Deze begrippen zijn breed en subjectief. Door met
+De Voorhoede wil een concept dat leuk en inhoudelijk is. Deze begrippen zijn breed en subjectief. Door met
 ```nunjucks {{ wordExplainer('Jasper') }}```
 te praten werden de wensen een stuk duidelijker. Leuk betekent dat de bezoekers een positievere ervaring hebben dan voordat er een installatie stond. Inhoudelijk betekent dat het moet uitstralen waar De Voorhoede voor staat.
 
->De Voorhoede is een meester van de userinterface. Dat houdt niet op bij schermen, maar overal waar het web bij kan. Niet alleen de front-end dat in de browser kan, maar ook middleware die de front-end beter maakt.
+>De Voorhoede is een meester van de userinterface. Dat houdt niet op bij schermen, maar overal waar het web bij kan. Niet alleen de front-end dat in de browser kan, maar ook techniek eromheen die de front-end beter maakt.
 >--Jasper
 
-De andere stakeholders hebben alleen eisen waaraan het concept zich moet houden. Zo wil UNITiD dat het te configureren is, zodat zij een andere bericht kunnen laten zien dan De Voorhoede. Ook moet het design UNITiD kunnen vertegenwoordigen.
+De andere stakeholders hebben alleen eisen waaraan het concept zich moet houden. Zo wil UNITiD dat het te configureren is, zodat zij een andere bericht kunnen laten zien dan De Voorhoede. Ook moet het design technisch goed genoeg zijn, dat het UNITiD kan vertegenwoordigen. In verband met de tijdsdruk van het project worden de wensen van UNITiD buiten de scope gezet voor dit project. De focus ligt op het technisch haalbare en de interactie met de eindgebruiker.
 
 #### END
 
 #### Randvoorwaarden
-Elk project heeft een aantal randvoorwaarden nodig waar het concept in groeit. De randvoorwaarden worden door verschillende stakeholder opgelegd. Deze randvoorwaarden zijn van belang om het concept de correcte kant op te sturen. Door deze methode toe te passen wordt er voorkomen dat er concepten worden bedacht die buiten de kaders vallen.
+Elk project heeft een aantal randvoorwaarden nodig waar het concept binnen groeit. De randvoorwaarden worden door verschillende stakeholders opgelegd. Deze randvoorwaarden zijn van belang om het concept de correcte kant op te sturen. Door deze methode toe te passen wordt er voorkomen dat er concepten worden bedacht die buiten de kaders vallen.
 
-**Wat zijn de fysieke randvoorwaarde voor dit project?**
+**Wat zijn de fysieke randvoorwaarden voor dit project?**
 
 De plek waar dit project fysiek mag staan is op de 2de etage voor de liften. Dit staat in het groen gemarkeerd op de plattegrond. Deze randvoorwaarde is besproken met het projectmanagement. De begane grond en de liften zijn geen mogelijke locaties voor een fysieke installatie, omdat deze locaties worden gedeeld met andere bedrijven. De bewakers hebben daarover gezegd dat ze het niet goed vinden. De gebouweigenaren zijn het hierover eens. Er mogen zelfs geen kleine sensoren worden geplaatst.
 
 **Wat zijn de economische/financiële randvoorwaarde voor dit project?**
 
-Het project heeft van tevoren geen vastgesteld budget. Wanneer er een concept gekozen is om uit te ontwikkelen zal De Voorhoede een budget vrij maken. Dit is afhankelijk van het gekozen concept.
+Het project heeft van tevoren geen vastgesteld budget. Wanneer er een concept gekozen is om uit te ontwikkelen zal De Voorhoede een budget vrij maken. Dit is afhankelijk van het gekozen concept en de waarde die De Voorhoede erin ziet.
 
 Om te kunnen prototypen heb ik mezelf een maximaal budget van €150 eigen vermogen gegeven.
 
@@ -49,26 +49,26 @@ Dit project loopt niet goed af als de bezoeker het gevoel krijgt dat hij/zij wor
 De geïnterviewde moesten aanvinken welke van de situaties ze te ver vonden gaan.
 
 {% set string = "Dit waren de situaties:<br/>
-•	Je e-mail gebruiken om door te verkopen.<br/>
-•	Op basis van 'face recognition' bepalen welke content het concept laat zien.<br/>
-•	De naam met wie je een afspraak hebt gemaakt gebruiken om je welkom te heten via een scherm.<br/>
-•	Op basis van je naam je Facebook-pagina scannen om het concept persoonlijker te maken.<br/>
-•	Een geschiedenis bijhouden waardoor het concept weet wanneer je voor het laatst bent geweest.<br/>
-•	Je stem opnemen voor het gebruik van 'Siri™-achtige' besturing / commands." %}
+•	Je e-mail gebruiken om door te verkopen. (11 van de 12 vonden dit te ver gaan)<br/>
+•	Op basis van 'face recognition' bepalen welke content het concept laat zien. (4 van de 12 vonden dit te ver gaan)<br/>
+•	De naam met wie je een afspraak hebt gemaakt gebruiken om je welkom te heten via een scherm. (0 van de 12 vonden dit te ver gaan)<br/>
+•	Op basis van je naam je Facebook-pagina scannen om het concept persoonlijker te maken. (10 van de 12 vonden dit te ver gaan)<br/>
+•	Een geschiedenis bijhouden waardoor het concept weet wanneer je voor het laatst bent geweest. (3 van de 12 vonden dit te ver gaan)<br/>
+•	Je stem opnemen voor het gebruik van 'Siri™-achtige' besturing / commands. (4 van de 12 vonden dit te ver gaan)" %}
 
 ```nunjucks {{ accordion('situaties', string) }}```
 
 #### END
 
 #### Website voor de bewakers
-Een van de randvoorwaarde is dat de fysieke installatie alleen op de 2de verdieping kan staan. Hierdoor is het moeilijk om te bepalen wie ernaar bovenkomt. Deze informatie is essentieel om het product persoonlijk te maken. Om deze informatie te krijgen zonder dat er op de begane grond iets fysieks staat wordt er een site gemaakt voor de bewakers. Op deze site kunnen de bewakers alle afspraken van De Voorhoede en UNITiD zien. Als een bezoeker komt klikt de bewaker op die afspraak en wordt er een seintje naar de server gestuurd zodat het systeem met enige zekerheid kan bepalen dat de volgende persoon die boven uit de lift stapt de bezoeker is.
+Een van de randvoorwaarde is dat de fysieke installatie alleen op de 2de verdieping kan staan. Hierdoor is het moeilijk om te bepalen wie ernaar bovenkomt. Deze informatie is essentieel om het product persoonlijk te maken. Om deze informatie te krijgen zonder dat er op de begane grond iets fysieks staat wordt er een site gemaakt voor de bewakers. Op deze site kunnen de bewakers alle afspraken van De Voorhoede zien. Als een bezoeker komt klikt de bewaker op die afspraak en wordt er een seintje naar de server gestuurd zodat het systeem met enige zekerheid kan bepalen dat de volgende persoon die boven uit de lift stapt de bezoeker is.
 
-Deze website geeft een betere ervaring voor de eindgebruikers. Ze hoeven namelijk niet meer handmatig het formulier in te vullen. Het helpt de bewakers, want het de afspraken worden ingevuld door De Voorhoede en UNITiD. Dit voegt een stuk beveiliging toe. En het is cruciaal voor het eindproduct.
+Deze website geeft een betere ervaring voor de eindgebruikers. Ze hoeven namelijk niet meer handmatig het formulier in te vullen. Het helpt de bewakers, want de afspraken worden ingevuld door De Voorhoede. Als het product in productie gaat kunnen alle bedrijven in het pand gebruik maken van het systeem, maar voor het prototype is het alleen De Voorhoede. Dit voegt een stuk beveiliging toe. En het is cruciaal voor het eindproduct.
 
 #### END
 
 #### Inspiration wall
-De Voorhoede had al een idee bij wat ze wilden toen ze het probleem aan mij voorlegde. Om de ideeën die zij hebben goed aanbod te laten komen heb ik met medewerkers van De Voorhoede en van UNITiD een
+De Voorhoede had al een idee bij wat ze wilden toen ze het probleem aan mij voorlegde. Om de ideeën die zij hebben goed aan bod te laten komen heb ik met medewerkers van De Voorhoede en van UNITiD een
 ```nunjucks {{ wordExplainer('inspiration wall') }}```
 gedaan.
 
@@ -141,6 +141,31 @@ Dit onderzoek is uitgevoerd door vooral rond te vragen. De informatiebronnen war
 * De Voorhoede (tijdelijke locatie), het pand gaf niet duidelijk aan waar bezoekers heen moesten, hierdoor liepen ze maar wat rond.
 * Ziggo, de geïnterviewde werkte daar parttime en die persoon moest elke dag wachten totdat iemand met autorisatie hem naar de afdeling kon leiden.
 * DBIS, de geïnterviewde was slecht uitgesproken over de sfeer, de ruimte, het decor, en de receptioniste was niet behulpzaam en zeer arrogant.
+
+{% set images = [
+  {
+    src: 'assets/concurenten onderzoek/present plus gallery.jpg',
+    alt: 'De wachtkamer van Present Plus',
+    caption: 'De wachtkamer van Present Plus'
+  },
+  {
+    src: 'assets/concurenten onderzoek/tudelft grond dashboard.jpg',
+    alt: 'De grond informatie van TU-Delft',
+    caption: 'De grond informatie van TU-Delft'
+  }
+] %}
+
+{% set galleryInstance = gallery(images) %}
+```nunjucks {{ accordion('gallery bronnen', galleryInstance) }}```
+
+{% set video1 = video('assets/concurenten onderzoek/amsterdam toren lift 1.mp4', 'De amsterdam toren lift', false, false, false, true) %}
+{% set video2 = video('assets/concurenten onderzoek/amsterdam toren lift 2.mp4', 'De amsterdam toren lift', false, false, false, true) %}
+{% set video3 = video('assets/concurenten onderzoek/amsterdam toren lift 3.mp4', 'De amsterdam toren lift', false, false, false, true) %}
+{% set video4 = video('assets/concurenten onderzoek/klimmuur pon spel.mp4', 'Het spel pong, maar dan op een klimmuur', false, false, false, true) %}
+{% set video5 = video('assets/concurenten onderzoek/wtc lift ervaring.mp4', 'De geschiedenis van de WTC', false, false, false, true) %}
+
+{% set string = '<div class="threeVideos">' + video1 + video2 + video3 + video4 + video5 + '</div>' %}
+```nunjucks {{ accordion('video bronnen', string) }}```
 
 **Conclusie**
 
@@ -338,7 +363,7 @@ Dit zijn foto’s van de plek waar het fysieke concept komt te staan. Als het ov
   }
 ]) %}
 
-{% set string = 'Wanneer de bezoekers uit de lift komen worden ze verwelkomt door een AI-stem. Deze stem vertelt de bezoeker de informatie wat bij de andere concepten op het scherm staat. Ook zal er een LED-matrix op de muur hangen met een smiley animatie. Dit moet ervoor zorgen dat de bezoeker weet dat er iets praat. Deze animaties zullen voor het eerste prototype niks anders zijn dan opvullingen. Misschien kan er later nog een pixel versie van de ontvanger op komen.' + gallery1 %}
+{% set string = 'Wanneer de bezoekers uit de lift komen worden ze verwelkomt door een AI-stem. Deze stem vertelt de bezoeker de informatie wat bij de andere concepten op het scherm staat. Daarna vraagt de stem of de bezoeker een spel wil spelen, als de bezoeker "ja" zegt wordt er een klein spelletje gespeeld.' + gallery1 %}
 ```nunjucks {{ accordion('De pratende AI', string) }}```
 
 ### END
@@ -399,7 +424,7 @@ en de wensen van De Voorhoede is de ‘pratende AI’ de richting geworden waar 
 >De Voorhoede is een meester van de userinterfaces. Dat houdt niet op bij schermen, maar overal waar het web bij kan...
 >-- Jasper
 
-Doordat er geen tot nauwlijks een scherm is, voelt het minder als wat andere bedrijven doen. Hierdoor heeft De Voorhoede een uniekere ervaring. Deze conceptrichting is goed modulair op te zetten. Waardoor De Voorhoede / UNITiD gemakkelijk de ervaring kan aanpassen. Dit kunnen ze doen door er aparte modules aan te koppelen.
+Doordat er geen tot nauwlijks een scherm is, voelt het minder als wat andere bedrijven doen. Hierdoor heeft De Voorhoede een uniekere ervaring. Deze conceptrichting is goed modulair op te zetten. Waardoor De Voorhoede gemakkelijk de ervaring kan aanpassen. Dit kunnen ze doen door er aparte modules aan te koppelen.
 
 ### END
 
