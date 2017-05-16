@@ -1,8 +1,0 @@
-.icon {
-  fill: var(--color-font);
-  transition: var(--transition-speed);
-}
-
-.icon:hover {
-  fill: var(--color-hover);
-}

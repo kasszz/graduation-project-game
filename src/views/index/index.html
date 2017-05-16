@@ -1,31 +1,19 @@
 {% extends "views/_base/_base.html" %}
 
-{% from "components/accordion/accordion.html" import accordion %}
-{% from "components/gallery/gallery.html" import gallery %}
-{% from "components/video/video.html" import video %}
-{% from "components/trello/trello.html" import trello %}
-{% from "components/word-explainer/word-explainer.html" import wordExplainer %}
-
-{% set head_title = "Afstudeerproject documentatie Casper Boutens" %}
+{% set head_title = "Afstudeerproject game" %}
 {% set head_description = "" %}
 
 {% block page_content %}
-  {% include 'components/app-header/app-header.html' %}
   <div class="wrapper">
-    {% include 'components/navigation/navigation.html' %}
-    <div data-main>
-      {% markdown 'chapters/voorwoord.md' %}
-      {% markdown 'chapters/managementsamenvatting.md' %}
-      {% markdown 'chapters/inleiding.md' %}
-      {% markdown 'chapters/probleemstelling.md' %}
-      {% markdown 'chapters/conceptrichting.md' %}
-      {% markdown 'chapters/concept.md' %}
-      {% markdown 'chapters/conclusie.md' %}
-      {% markdown 'chapters/bijlage.md' %}
+    <div class="score-ui">
+      <span>score: <span class="score">0</span></span>
+      <span>multiplier: <span class="multiplier">1</span></span>
     </div>
+    <canvas id="game" width="1000" height="500"></canvas>
   </div>
 {% endblock %}
 
 {% block page_scripts %}
+  <script src="assets/js/web-sockets.js"></script>
 	<script src="assets/js/script.js"></script>
 {% endblock %}
