@@ -37,6 +37,7 @@ export default class Coin {
     if(this.position.x < -this.dimentions.width) {
       this.gc.destroy(this.GOIndex);
       this.gc.resetCombo();
+      this.gc.coinOutOfGame ++;
     }
   }
 

@@ -4,16 +4,11 @@
 {% set head_description = "" %}
 
 {% block page_content %}
-  <div class="wrapper">
-    <div class="score-ui">
-      <span>score: <span class="score">0</span></span>
-      <span>multiplier: <span class="multiplier">1</span></span>
-    </div>
-    <canvas id="game" width="1000" height="500"></canvas>
-  </div>
+  <canvas id="game" width="1000" height="500"></canvas>
 {% endblock %}
 
 {% block page_scripts %}
   <script src="assets/js/web-sockets.js"></script>
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
 	<script src="assets/js/script.js"></script>
 {% endblock %}

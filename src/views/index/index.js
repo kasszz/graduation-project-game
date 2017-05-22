@@ -8,18 +8,60 @@ import Coin from '../../classes/coin.js';
   window.utils = new Utils();
   const socket = io.connect('http://localhost:8000');
   const canvas = new Canvas(document.getElementById('game'));
+  const decisionTimerLength = 10000;
+
+  const voice = {
+    lang: 'Dutch Female',
+    pitch: 0.9,
+    rate: 1
+  }
+
   let gc;
   let player;
   let lastFrameTime;
-  const html = {
-    score: document.querySelector('.score'),
-    scoreMultiplier: document.querySelector('.multiplier')
+  let messages;
+  let decisionTimer;
+
+  socket.on('messageStrings', strings => {
+    messages = strings;
+  });
+
+  socket.on('start', () => {
+    responsiveVoice.speak(messages.welcome, voice.lang, {pitch: voice.pitch, rate: voice.rate, onend: makeDecisionTime});
+  });
+
+  socket.on('buttonPressed', which => {
+    if(player) {
+      player.setMove(which - 1);
+    } else if(decisionTimer) {
+      responsiveVoice.speak(messages.goodluck, voice.lang, {pitch: voice.pitch, rate: voice.rate});
+      clearTimeout(decisionTimer);
+      decisionTimer = null;
+      startGame();
+    }
+  });
+
+  socket.on('gameOver', string => {
+    responsiveVoice.speak(string.gameOver, voice.lang, {pitch: voice.pitch, rate: voice.rate});
+    endGame();
+  });
+
+  function makeDecisionTime() {
+    decisionTimer = window.setTimeout(() => {
+      dontWantToPlayGame();
+    }, decisionTimerLength);
+  }
+
+  function dontWantToPlayGame() {
+    responsiveVoice.speak(messages.dontWantToPlay, voice.lang, {pitch: voice.pitch, rate: voice.rate});
+    socket.emit('dontWantToPlay');
+    endGame();
   }
 
   function startGame() {
     lastFrameTime = new Date().getTime();
-
     gc = new GameController(canvas);
+
     player = gc.spawnGO(new Player({
       canvas,
       gc,
@@ -35,16 +77,30 @@ import Coin from '../../classes/coin.js';
     requestAnimationFrame(gameLoop);
   }
 
+  function endGame() {
+    canvas.ctx.clearRect(0, 0, canvas.dimentions.width, canvas.dimentions.height);
+    gc = null;
+    player = null;
+    lastFrameTime = null;
+    messages = null;
+    decisionTimer = null;
+
+    window.removeEventListener('keydown', onKeyDown, false);
+    window.removeEventListener('keyup', onKeyUp, false);
+  }
+
   function gameLoop() {
-    timeLoop();
-    updateLoop();
-    drawLoop();
+    if(gc) {
+      timeLoop();
+      updateLoop();
+      drawLoop();
 
-    checkSpawnTimer();
+      checkSpawnTimer();
 
-    lastFrameTime = new Date().getTime();
+      lastFrameTime = new Date().getTime();
 
-    requestAnimationFrame(gameLoop);
+      requestAnimationFrame(gameLoop);
+    }
   }
 
   function timeLoop() {
@@ -60,6 +116,11 @@ import Coin from '../../classes/coin.js';
         go.update();
       }
     });
+
+    if(gc.coinOutOfGame === gc.coinSpawned && gc.spawnForcast.rounds.length && !gc.gameOver) {
+      socket.emit('gameOver', Math.round(gc.score));
+      gc.gameOver = true;
+    }
   }
 
   function drawLoop() {
@@ -101,7 +162,7 @@ import Coin from '../../classes/coin.js';
       tag: 'coin'
     }));
 
-    gc.spawnCoins ++;
+    gc.coinSpawned ++;
   }
 
   function calculateLine() {
@@ -137,8 +198,16 @@ import Coin from '../../classes/coin.js';
   }
 
   function drawUI() {
-    html.score.innerHTML = Math.round(gc.score);
-    html.scoreMultiplier.innerHTML = Math.round(gc.comboAmount * 100) / 100;
+    canvas.ctx.save();
+    canvas.ctx.translate( 0, 0);
+    canvas.ctx.rotate( Math.PI / 2);
+    canvas.ctx.font = `${gc.fontSize}px sans-serif`;
+    canvas.ctx.fillStyle = gc.fontColor;
+    canvas.ctx.textAlign = 'center';
+    canvas.ctx.fillText(`Score: ${Math.round(gc.score)}`, canvas.height / 2, -(canvas.width - gc.fontSize));
+    canvas.ctx.font = `${gc.fontSize / 1.5}px sans-serif`;
+    canvas.ctx.fillText(`Multiplier: ${(Math.round(gc.comboAmount * 100) / 100).toFixed(2)}`, canvas.height / 2, -(canvas.width - (gc.fontSize * 2)));
+    canvas.ctx.restore();
   }
 
   function onKeyDown(event) {
@@ -168,7 +237,4 @@ import Coin from '../../classes/coin.js';
       gc.keysPressed.d = false;
     }
   }
-
-  startGame();
-
 })();

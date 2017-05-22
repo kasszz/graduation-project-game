@@ -1,9 +1,11 @@
 export default class GameController {
   constructor(canvas) {
     this.debug = true;
+    this.gameOver = false;
     this.canvas = canvas;
 
     this.fontSize = 24;
+    this.fontColor = '#373D3F';
 
     this.lineAmount = 3;
     this.lineHeight = canvas.dimentions.height / this.lineAmount;
@@ -21,10 +23,10 @@ export default class GameController {
       d: false
     }
 
-    this.spawnTotalTime = 10000;
-    this.spawnIntervalStart = 500;
+    this.spawnTotalTime = 2000;
+    this.spawnIntervalStart = 1200;
     this.spawnIntervalMinimum = 200;
-    this.spawnIntervalMultiplier = 0.978;
+    this.spawnIntervalMultiplier = 0.998;
     this.spawnInterval = this.spawnIntervalStart;
     this.spawnForcast = this.getForcast();
     this.spawnRound = 0;
@@ -85,6 +87,7 @@ export default class GameController {
 
   spawnGO(go) {
     this.gameObjects.push(go);
+    return go;
   }
 
   destroy(index) {

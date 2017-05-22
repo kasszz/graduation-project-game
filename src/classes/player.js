@@ -27,6 +27,11 @@ export default class Player {
     }
   }
 
+  setMove(position) {
+    this.lineActive = position;
+    this.setPosition();
+  }
+
   move() {
     if(this.gc.keysPressed.a) {
       this.lineActive = 0;
@@ -57,6 +62,7 @@ export default class Player {
       if(collition && collition.tag === 'coin') {
         this.gc.addToScore(collition.worth);
         this.gc.addToCombo();
+        this.gc.coinOutOfGame ++;
         this.gc.destroy(collition.GOIndex);
       }
     });

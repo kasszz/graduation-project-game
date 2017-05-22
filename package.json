@@ -1,7 +1,7 @@
 {
-  "name": "graduation-project-document-generator",
+  "name": "graduation-project-game",
   "version": "0.0.1",
-  "description": "A project that builds a document site with the given data",
+  "description": "The game part of the project",
   "scripts": {
     "start": "http-server './dist/' -c-1 -p 8666",
     "clean": "rimraf ./dist/ && mkdirp ./dist/",
