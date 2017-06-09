@@ -2,8 +2,8 @@ export default class Canvas {
   constructor(element) {
       this.element = element;
       this.ctx = this.element.getContext('2d');
-      this.width = 1000;
-      this.height = 500;
+      this.width = document.body.offsetWidth
+      this.height = document.body.offsetHeight
 
       this.element.width = this.width;
       this.element.height = this.height;

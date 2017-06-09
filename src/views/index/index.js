@@ -6,9 +6,9 @@ import Coin from '../../classes/coin.js';
 
 (() => {
   window.utils = new Utils();
-  const socket = io.connect('http://localhost:8000');
+  const socket = io.connect('http://192.168.3.243:8000');
   const canvas = new Canvas(document.getElementById('game'));
-  const decisionTimerLength = 10000;
+  const decisionTimerLength = 5000;
 
   const voice = {
     lang: 'Dutch Female',
@@ -34,10 +34,11 @@ import Coin from '../../classes/coin.js';
     if(player) {
       player.setMove(which - 1);
     } else if(decisionTimer) {
-      responsiveVoice.speak(messages.goodluck, voice.lang, {pitch: voice.pitch, rate: voice.rate});
+      responsiveVoice.speak(messages.instruction, voice.lang, {pitch: voice.pitch, rate: voice.rate, onend: () => {
+        startGame();
+      }});
       clearTimeout(decisionTimer);
       decisionTimer = null;
-      startGame();
     }
   });
 
@@ -69,9 +70,6 @@ import Coin from '../../classes/coin.js';
       tag: 'player'
     }));
 
-    window.addEventListener('keydown', onKeyDown, false);
-    window.addEventListener('keyup', onKeyUp, false);
-
     spawnNewCoin();
 
     requestAnimationFrame(gameLoop);
@@ -84,9 +82,6 @@ import Coin from '../../classes/coin.js';
     lastFrameTime = null;
     messages = null;
     decisionTimer = null;
-
-    window.removeEventListener('keydown', onKeyDown, false);
-    window.removeEventListener('keyup', onKeyUp, false);
   }
 
   function gameLoop() {
@@ -198,43 +193,11 @@ import Coin from '../../classes/coin.js';
   }
 
   function drawUI() {
-    canvas.ctx.save();
-    canvas.ctx.translate( 0, 0);
-    canvas.ctx.rotate( Math.PI / 2);
     canvas.ctx.font = `${gc.fontSize}px sans-serif`;
     canvas.ctx.fillStyle = gc.fontColor;
     canvas.ctx.textAlign = 'center';
-    canvas.ctx.fillText(`Score: ${Math.round(gc.score)}`, canvas.height / 2, -(canvas.width - gc.fontSize));
+    canvas.ctx.fillText(`Score: ${Math.round(gc.score)}`, canvas.width / 2, gc.fontSize + gc.fontOffset);
     canvas.ctx.font = `${gc.fontSize / 1.5}px sans-serif`;
-    canvas.ctx.fillText(`Multiplier: ${(Math.round(gc.comboAmount * 100) / 100).toFixed(2)}`, canvas.height / 2, -(canvas.width - (gc.fontSize * 2)));
-    canvas.ctx.restore();
-  }
-
-  function onKeyDown(event) {
-    if(event.keyCode === 65 && !gc.keysPressed.a) {
-      gc.keysPressed.a = true;
-    }
-
-    if(event.keyCode === 83 && !gc.keysPressed.s) {
-      gc.keysPressed.s = true;
-    }
-
-    if(event.keyCode === 68 && !gc.keysPressed.d) {
-      gc.keysPressed.d = true;
-    }
-  }
-
-  function onKeyUp(event) {
-    if(event.keyCode === 65) {
-      gc.keysPressed.a = false;
-    }
-
-    if(event.keyCode === 83) {
-      gc.keysPressed.s = false;
-    }
-
-    if(event.keyCode === 68) {
-      gc.keysPressed.d = false;
-    }
+    canvas.ctx.fillText(`Multiplier: ${(Math.round(gc.comboAmount * 100) / 100).toFixed(2)}`, canvas.width / 2, gc.fontSize * 2 + gc.fontOffset);
   }
 })();

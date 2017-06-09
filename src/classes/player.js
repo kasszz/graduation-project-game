@@ -5,13 +5,10 @@ export default class Player {
     this.GOIndex = data.GOIndex;
     this.tag = data.tag;
     this.lineActive = 0;
-    this.position = {
-      x: 0,
-      y: this.calculateY()
-    }
+
     this.dimentions = {
-      width: 10,
-      height: this.gc.lineHeight
+      width: this.gc.lineWidth,
+      height: 10
     }
   }
 
@@ -46,8 +43,8 @@ export default class Player {
 
   setPosition() {
     this.position = {
-      x: 0,
-      y: this.calculateY()
+      x: this.calculateX(),
+      y: this.canvas.height - this.dimentions.height
     }
   }
 
@@ -68,7 +65,7 @@ export default class Player {
     });
   }
 
-  calculateY() {
-    return this.lineActive * this.gc.lineHeight;
+  calculateX() {
+    return this.lineActive * this.gc.lineWidth;
   }
 }

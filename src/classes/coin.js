@@ -5,15 +5,15 @@ export default class Coin {
     this.GOIndex = data.GOIndex;
     this.tag = data.tag;
     this.lineIndex = data.lineIndex;
-    this.speed = 400;
+    this.speed = 300;
     this.worth = 15;
     this.dimentions = {
-      width: 75,
-      height: 75
+      width: 150,
+      height: 150
     }
     this.position = {
-      x: this.canvas.width + this.dimentions.width,
-      y: this.calculateY()
+      x: this.calculateX(),
+      y: 0 - this.dimentions.height
     }
 
     this.image = new Image();
@@ -30,18 +30,18 @@ export default class Coin {
   }
 
   updatePosition() {
-    this.position.x -= this.speed * this.canvas.delta;
+    this.position.y += this.speed * this.canvas.delta;
   }
 
   checkOffscreen() {
-    if(this.position.x < -this.dimentions.width) {
+    if(this.position.y > this.canvas.height) {
       this.gc.destroy(this.GOIndex);
       this.gc.resetCombo();
       this.gc.coinOutOfGame ++;
     }
   }
 
-  calculateY() {
-    return (this.lineIndex * this.gc.lineHeight - (this.gc.lineHeight / 2)) - (this.dimentions.height / 2);
+  calculateX() {
+    return (this.lineIndex * this.gc.lineWidth - (this.gc.lineWidth / 2)) - (this.dimentions.width / 2);
   }
 }

@@ -6,9 +6,10 @@ export default class GameController {
 
     this.fontSize = 24;
     this.fontColor = '#373D3F';
+    this.fontOffset = 30;
 
     this.lineAmount = 3;
-    this.lineHeight = canvas.dimentions.height / this.lineAmount;
+    this.lineWidth = canvas.dimentions.width / this.lineAmount;
 
     this.gameObjects = [];
 
@@ -23,7 +24,7 @@ export default class GameController {
       d: false
     }
 
-    this.spawnTotalTime = 2000;
+    this.spawnTotalTime = 45000;
     this.spawnIntervalStart = 1200;
     this.spawnIntervalMinimum = 200;
     this.spawnIntervalMultiplier = 0.998;
